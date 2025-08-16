@@ -1,0 +1,56 @@
+Début
+    Définir tableau1 ← [3, 1, 7, 9]
+    Définir tableau2 ← [2, 4, 1, 9, 3]
+    Initialiser somme ← 0
+
+    Pour i de 0 à longueur(tableau1) - 1
+        Initialiser trouvé ← faux
+        Pour j de 0 à longueur(tableau2) - 1
+            Si tableau1[i] = tableau2[j] alors
+                trouvé ← vrai
+                Sortir de la boucle
+            FinSi
+        FinPour
+        Si trouvé = faux alors
+            somme ← somme + tableau1[i]
+        FinSi
+    FinPour
+
+    Pour i de 0 à longueur(tableau2) - 1
+        Initialiser trouvé ← faux
+        Pour j de 0 à longueur(tableau1) - 1
+            Si tableau2[i] = tableau1[j] alors
+                trouvé ← vrai
+                Sortir de la boucle
+            FinSi
+        FinPour
+        Si trouvé = faux alors
+            somme ← somme + tableau2[i]
+        FinSi
+    FinPour
+
+    Afficher "Somme des éléments distincts :", somme
+Fin
+
+
+Procédure dot_product(v1, v2, n, ps)
+    ps ← 0
+    Pour i de 0 à n - 1
+        ps ← ps + v1[i] * v2[i]
+    FinPour
+FinProcédure
+
+Algorithme principal
+Définir n ← taille des vecteurs
+Définir v1 ← [1, 2, 3]
+Définir v2 ← [-3, 0, 1]
+Définir ps ← 0
+
+Appeler dot_product(v1, v2, n, ps)
+
+Si ps = 0 alors
+    Afficher "Les vecteurs sont orthogonaux"
+Sinon
+    Afficher "Les vecteurs ne sont pas orthogonaux"
+FinSi
+Fin
