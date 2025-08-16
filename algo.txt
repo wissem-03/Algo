@@ -1,0 +1,35 @@
+Début
+    Initialiser longueur ← 0
+    Initialiser mots ← 0
+    Initialiser voyelles ← 0
+    Initialiser inMot ← faux
+    Initialiser i ← 0
+    Définir voyellesSet ← {'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'}
+
+    Lire phrase
+
+    Tant que phrase[i] ≠ '.'
+        longueur ← longueur + 1
+
+        Si phrase[i] ∈ voyellesSet alors
+            voyelles ← voyelles + 1
+        FinSi
+
+        Si phrase[i] ≠ ' ' alors
+            Si inMot = faux alors
+                mots ← mots + 1
+                inMot ← vrai
+            FinSi
+        Sinon
+            inMot ← faux
+        FinSi
+
+        i ← i + 1
+    FinTantQue
+
+    longueur ← longueur + 1  // pour le point final
+
+    Afficher "Longueur :", longueur
+    Afficher "Nombre de mots :", mots
+    Afficher "Nombre de voyelles :", voyelles
+Fin
